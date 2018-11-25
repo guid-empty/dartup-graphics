@@ -1,0 +1,21 @@
+name: nima_animation
+description: Nima demonstration
+
+dependencies:
+  flutter:
+    sdk: flutter
+  nima: ^1.0.0
+
+  cupertino_icons: ^0.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/Hop.nima
+    - assets/Hop.png
