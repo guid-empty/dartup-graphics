@@ -15,15 +15,22 @@ class SpinningSquare extends StatefulWidget {
 class SquarePainter extends CustomPainter {
   Color color;
   double width;
+  double innerWidth;
 
-  SquarePainter({this.color, this.width});
+  SquarePainter({this.color, this.width, this.innerWidth});
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = new Paint()
       ..color = color
       ..style = PaintingStyle.fill;
 
-    canvas.drawRect(Rect.fromLTWH(-width / 2, -width / 2, width, width), paint);
+    Paint black = new Paint()
+      ..color = Colors.black
+      ..style = PaintingStyle.fill;
+
+    canvas
+      ..drawRect(Rect.fromLTWH(-width / 2, -width / 2, width, width), paint)
+      ..drawRect(Rect.fromLTWH(-innerWidth / 2, -innerWidth / 2, innerWidth, innerWidth), black);
   }
 
   @override
@@ -61,7 +68,7 @@ class _SpinningSquareState extends State<SpinningSquare>
       child:
         Center(
           child: CustomPaint(
-            painter: SquarePainter(color: Colors.lightGreenAccent, width: 200.0),
+            painter: SquarePainter(color: Colors.lightGreenAccent, width: 200.0, innerWidth: 70.0),
           )
         )
     );
