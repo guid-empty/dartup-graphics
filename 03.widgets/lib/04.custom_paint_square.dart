@@ -30,7 +30,10 @@ class SquarePainter extends CustomPainter {
 
     canvas
       ..drawRect(Rect.fromLTWH(-width / 2, -width / 2, width, width), paint)
-      ..drawRect(Rect.fromLTWH(-innerWidth / 2, -innerWidth / 2, innerWidth, innerWidth), black);
+      ..drawRect(
+          Rect.fromLTWH(
+              -innerWidth / 2, -innerWidth / 2, innerWidth, innerWidth),
+          black);
   }
 
   @override
@@ -63,11 +66,12 @@ class _SpinningSquareState extends State<SpinningSquare>
 
   @override
   Widget build(BuildContext context) {
-    return
-          CustomPaint(
-            painter: SquarePainter(color: Colors.lightGreenAccent, width: 200.0, innerWidth: 70.0),
-    );
-
+    return RotationTransition(
+        turns: _animation,
+        child: CustomPaint(
+          painter: SquarePainter(
+              color: Colors.lightGreenAccent, width: 200.0, innerWidth: 70.0),
+        ));
   }
 }
 
