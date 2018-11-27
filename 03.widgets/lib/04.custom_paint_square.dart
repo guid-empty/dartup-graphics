@@ -63,14 +63,9 @@ class _SpinningSquareState extends State<SpinningSquare>
 
   @override
   Widget build(BuildContext context) {
-    return RotationTransition(
-      turns: _animation,
-      child:
-        Center(
-          child: CustomPaint(
+    return
+          CustomPaint(
             painter: SquarePainter(color: Colors.lightGreenAccent, width: 200.0, innerWidth: 70.0),
-          )
-        )
     );
 
   }
