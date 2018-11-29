@@ -1,0 +1,15 @@
+name: todo_list
+description: Todo List
+
+version: 1.0.0
+
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+
+flutter:
+  uses-material-design: true
