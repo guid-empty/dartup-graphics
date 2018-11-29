@@ -16,6 +16,7 @@ class _SpinningSquareState extends State<SpinningSquare> with SingleTickerProvid
   void initState() {
     super.initState();
     _animation = AnimationController(
+      value: 0.0,
       duration: const Duration(milliseconds: 3600),
       vsync: this,
       lowerBound: 0.0,

@@ -49,12 +49,12 @@ class _SpinningSquareState extends State<SpinningSquare>
   @override
   void initState() {
     super.initState();
-    // We use 3600 milliseconds instead of 1800 milliseconds because 0.0 -> 1.0
-    // represents an entire turn of the square whereas in the other examples
-    // we used 0.0 -> math.pi, which is only half a turn.
     _animation = AnimationController(
+      value: 0.0,
       duration: const Duration(milliseconds: 3600),
       vsync: this,
+      lowerBound: 0.0,
+      upperBound: 1.0
     )..repeat();
   }
 
